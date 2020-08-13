@@ -5,19 +5,22 @@
   
 
   
-  <title>浅谈react | nuannuan</title>
+  <title>js | nuannuan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="受控组件与非受控组件">
+  <meta name="description" content="js的splice 和slicesplice 是直接对原数组进行操作，返回的是删除或添加的数组 arrayObject.splice(index,howmany,item1,…..,itemX) index 必须。规定添加或者删除项目的位置，使用负数可从数组结尾处规定位置 howmany 必须，要删除的项目数量，如果设置为0则不会删除 item1，可选，向数组添加的新项目 slice 从已选的数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈react">
-<meta property="og:url" content="http://yoursite.com/2020/07/02/%E6%B5%85%E8%B0%88react/index.html">
+<meta property="og:title" content="js">
+<meta property="og:url" content="http://yoursite.com/2020/08/12/js/index.html">
 <meta property="og:site_name" content="nuannuan">
-<meta property="og:description" content="受控组件与非受控组件">
+<meta property="og:description" content="js的splice 和slicesplice 是直接对原数组进行操作，返回的是删除或添加的数组 arrayObject.splice(index,howmany,item1,…..,itemX) index 必须。规定添加或者删除项目的位置，使用负数可从数组结尾处规定位置 howmany 必须，要删除的项目数量，如果设置为0则不会删除 item1，可选，向数组添加的新项目 slice 从已选的数组">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-02T08:38:31.802Z">
-<meta property="article:modified_time" content="2020-07-10T09:54:35.724Z">
+<meta property="og:image" content="http://yoursite.com/images/js/1.png">
+<meta property="og:image" content="http://yoursite.com/images/js/2.png">
+<meta property="article:published_time" content="2020-08-12T03:46:27.058Z">
+<meta property="article:modified_time" content="2020-08-12T06:02:41.107Z">
 <meta property="article:author" content="jiajia">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/js/1.png">
   
     <link rel="alternate" href="/atom.xml" title="nuannuan" type="application/atom+xml">
   
@@ -66,10 +69,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-浅谈react" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-js" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/07/02/%E6%B5%85%E8%B0%88react/" class="article-date">
-  <time datetime="2020-07-02T08:38:31.802Z" itemprop="datePublished">2020-07-02</time>
+    <a href="/2020/08/12/js/" class="article-date">
+  <time datetime="2020-08-12T03:46:27.058Z" itemprop="datePublished">2020-08-12</time>
 </a>
     
   </div>
@@ -80,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      浅谈react
+      js
     </h1>
   
 
@@ -88,11 +91,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="受控组件与非受控组件"><a href="#受控组件与非受控组件" class="headerlink" title="受控组件与非受控组件"></a>受控组件与非受控组件</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+        <h3 id="js的splice-和slice"><a href="#js的splice-和slice" class="headerlink" title="js的splice 和slice"></a>js的splice 和slice</h3><h4 id="splice-是直接对原数组进行操作，返回的是删除或添加的数组"><a href="#splice-是直接对原数组进行操作，返回的是删除或添加的数组" class="headerlink" title="splice 是直接对原数组进行操作，返回的是删除或添加的数组"></a>splice 是直接对原数组进行操作，返回的是删除或添加的数组</h4><ol>
+<li>arrayObject.splice(index,howmany,item1,…..,itemX)</li>
+<li>index 必须。规定添加或者删除项目的位置，使用负数可从数组结尾处规定位置</li>
+<li>howmany 必须，要删除的项目数量，如果设置为0则不会删除</li>
+<li>item1，可选，向数组添加的新项目</li>
+<li><img src="/images/js/1.png" alt=""><h4 id="slice-从已选的数组中返回选定的元素，返回的是一个新的数组该方法不会改变原来的数组，返回的是一个子数组"><a href="#slice-从已选的数组中返回选定的元素，返回的是一个新的数组该方法不会改变原来的数组，返回的是一个子数组" class="headerlink" title="slice 从已选的数组中返回选定的元素，返回的是一个新的数组该方法不会改变原来的数组，返回的是一个子数组"></a>slice 从已选的数组中返回选定的元素，返回的是一个新的数组该方法不会改变原来的数组，返回的是一个子数组</h4></li>
+<li>arrayObject.slice(start,end)</li>
+<li>start 从何处开始选取，如果是负数那么就就从尾部开始-1为最后一个数字</li>
+<li>可选 规定从何处结束选取。该参数是数组片段结束处的下标，不包含最后一个下标的元素</li>
+<li><img src="/images/js/2.png" alt=""></li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/02/%E6%B5%85%E8%B0%88react/" data-id="ckdsioazh0002gkv5ecyo0yvc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/08/12/js/" data-id="ckdsioaz90000gkv5f6up3qo8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -101,19 +115,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/07/28/vue%E8%B7%AF%E7%94%B1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          vue路由
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/07/02/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/08/06/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">hexo博客搭建</div>
+      <div class="article-nav-title">vue基础知识</div>
     </a>
   
 </nav>
