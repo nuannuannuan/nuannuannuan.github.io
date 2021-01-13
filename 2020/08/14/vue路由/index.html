@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>nuannuanblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue路由1.如何去掉路由上的#vue-router默认为hash模式，可以使用history模式url就是正常的url例如：http:&#x2F;&#x2F;yoursite.com&#x2F;user&#x2F;id不过这种模式需要后台的配置支持，因为我们是单页面的客户端应用，当用户在浏览器直接访问http:&#x2F;&#x2F;yoursite.com&#x2F;user&#x2F;id就会返回404这样就不好看了。2.路由守卫分类全局守卫是指路由实例上直接操作的钩子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuannuanblog">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/vue%E8%B7%AF%E7%94%B1/index.html">
+<meta property="og:site_name" content="nuannuanblog">
+<meta property="og:description" content="vue路由1.如何去掉路由上的#vue-router默认为hash模式，可以使用history模式url就是正常的url例如：http:&#x2F;&#x2F;yoursite.com&#x2F;user&#x2F;id不过这种模式需要后台的配置支持，因为我们是单页面的客户端应用，当用户在浏览器直接访问http:&#x2F;&#x2F;yoursite.com&#x2F;user&#x2F;id就会返回404这样就不好看了。2.路由守卫分类全局守卫是指路由实例上直接操作的钩子">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/vue/history.png">
+<meta property="og:image" content="http://yoursite.com/images/vue/router1.png">
+<meta property="og:image" content="http://yoursite.com/images/vue/router3.png">
+<meta property="og:image" content="http://yoursite.com/images/vue/router2.png">
+<meta property="og:image" content="http://yoursite.com/images/vue/router4.png">
+<meta property="og:image" content="http://yoursite.com/images/vue/router5.png">
+<meta property="article:published_time" content="2020-08-14T09:37:55.613Z">
+<meta property="article:modified_time" content="2020-08-06T02:58:37.181Z">
+<meta property="article:author" content="jiajia">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/vue/history.png">
+  
+    <link rel="alternate" href="/atom.xml" title="nuannuanblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nuannuanblog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue路由" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/14/vue%E8%B7%AF%E7%94%B1/" class="article-date">
+  <time datetime="2020-08-14T09:37:55.613Z" itemprop="datePublished">2020-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue路由"><a href="#vue路由" class="headerlink" title="vue路由"></a>vue路由</h2><h3 id="1-如何去掉路由上的"><a href="#1-如何去掉路由上的" class="headerlink" title="1.如何去掉路由上的#"></a>1.如何去掉路由上的#</h3><h5 id="vue-router默认为hash模式，可以使用history模式url就是正常的url例如：http-yoursite-com-user-id"><a href="#vue-router默认为hash模式，可以使用history模式url就是正常的url例如：http-yoursite-com-user-id" class="headerlink" title="vue-router默认为hash模式，可以使用history模式url就是正常的url例如：http://yoursite.com/user/id"></a>vue-router默认为hash模式，可以使用history模式url就是正常的url例如：<a href="http://yoursite.com/user/id">http://yoursite.com/user/id</a></h5><h5 id="不过这种模式需要后台的配置支持，因为我们是单页面的客户端应用，当用户在浏览器直接访问http-yoursite-com-user-id就会返回404这样就不好看了。"><a href="#不过这种模式需要后台的配置支持，因为我们是单页面的客户端应用，当用户在浏览器直接访问http-yoursite-com-user-id就会返回404这样就不好看了。" class="headerlink" title="不过这种模式需要后台的配置支持，因为我们是单页面的客户端应用，当用户在浏览器直接访问http://yoursite.com/user/id就会返回404这样就不好看了。"></a>不过这种模式需要后台的配置支持，因为我们是单页面的客户端应用，当用户在浏览器直接访问<a href="http://yoursite.com/user/id%E5%B0%B1%E4%BC%9A%E8%BF%94%E5%9B%9E404%E8%BF%99%E6%A0%B7%E5%B0%B1%E4%B8%8D%E5%A5%BD%E7%9C%8B%E4%BA%86%E3%80%82">http://yoursite.com/user/id就会返回404这样就不好看了。</a></h5><h3 id=""><a href="#" class="headerlink" title=""></a><img src="/images/vue/history.png"></h3><h3 id="2-路由守卫分类"><a href="#2-路由守卫分类" class="headerlink" title="2.路由守卫分类"></a>2.路由守卫分类</h3><h3 id="全局守卫"><a href="#全局守卫" class="headerlink" title="全局守卫"></a>全局守卫</h3><h4 id="是指路由实例上直接操作的钩子函数，特点是所有路由配置的组件都会触发，直白点就是触发路由就会触发这些钩子函数"><a href="#是指路由实例上直接操作的钩子函数，特点是所有路由配置的组件都会触发，直白点就是触发路由就会触发这些钩子函数" class="headerlink" title="是指路由实例上直接操作的钩子函数，特点是所有路由配置的组件都会触发，直白点就是触发路由就会触发这些钩子函数"></a>是指路由实例上直接操作的钩子函数，特点是所有路由配置的组件都会触发，直白点就是触发路由就会触发这些钩子函数</h4><ol>
+<li>全局前置守卫 router.beforeEach(to，from， next)</li>
+<li>全局解析守卫 router.beforeResolve(to，from， next)</li>
+<li>全局后置钩子 router.afterEach(to，from) <code>router.afterEach((to, from) =&gt; &#123; // ... &#125;)</code><h3 id="路由守卫"><a href="#路由守卫" class="headerlink" title="路由守卫"></a>路由守卫</h3><h4 id="beforeEnter-to-from-next"><a href="#beforeEnter-to-from-next" class="headerlink" title="beforeEnter(to, from, next)"></a>beforeEnter(to, from, next)</h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="/images/vue/router1.png"></h4><h3 id="组件守卫"><a href="#组件守卫" class="headerlink" title="组件守卫"></a>组件守卫</h3></li>
+<li>beforeRouteEnter 守卫不能访问this 因为守卫在导航确认前被调用这时新组建还没被创建<br>不过可以传一个回调给nexe()在导航被确认的时候执行回调<h4 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="/images/vue/router3.png"></h4></li>
+</ol>
+<p><strong>beforeRouteEnter 是支持给next 传递回调的唯一守卫。对于beforeRouteUpdate和beforeRouteLeave来说，this已经可用，所以不支持传递回调因此没必要了</strong><br>2. beforeRouteUpdate (2.2 新增)</p>
+<h4 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="/images/vue/router2.png"></h4><ol start="3">
+<li>beforeRouteLeave<h4 id="-4"><a href="#-4" class="headerlink" title=""></a><img src="/images/vue/router4.png"></h4></li>
+</ol>
+<h3 id="守卫方法接受的三个参数"><a href="#守卫方法接受的三个参数" class="headerlink" title="守卫方法接受的三个参数"></a>守卫方法接受的三个参数</h3><ol>
+<li>to 即将要进入的目标路由对象</li>
+<li>from 当前导航即将要离开的路由</li>
+<li>next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。<br>next() 进行管道中的下一个钩子 如果钩子全部执行完毕 则导航的状态就是comfirm<br>next(false)中断当前的导航<br>next(/)跳转到一个不同的地址<br>next(error) 如果传入的是error 则导航会被终止且错误会被传递给router.onError()注册过得回调</li>
+</ol>
+<p><strong>确保 next 函数在任何给定的导航守卫中都被严格调用一次。它可以出现多于一次，但是只能在所有的逻辑路径都不重叠的情况下，否则钩子永远都不会被解析或报错</strong></p>
+<h3 id="完整的导航解析流程"><a href="#完整的导航解析流程" class="headerlink" title="完整的导航解析流程"></a>完整的导航解析流程</h3><ol>
+<li>导航被触发</li>
+<li>在失活的组件调用beforeRouteLeave守卫</li>
+<li>调用全局守卫beforeEach</li>
+<li>在重用的组件里调用 beforeRouteUpdate守卫（2.2+）</li>
+<li>在路由配置调用beforeEnter</li>
+<li>解析异步路由组件</li>
+<li>在被激活的组件调用beforeRouteEnter</li>
+<li>调用全局的beforeResolve</li>
+<li>导航被确认</li>
+<li>调用全局的afterEach钩子</li>
+<li>触发dom 更新</li>
+<li>用创建好的实例调用 beforeRouteEnter 守卫中传给 next 的回调函数。<h3 id="-5"><a href="#-5" class="headerlink" title=""></a><img src="/images/vue/router5.png"></h3></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/14/vue%E8%B7%AF%E7%94%B1/" data-id="ckjutqwzx0006zsv56wac137y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/20/vue3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/20/vue3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vue%E8%B7%AF%E7%94%B1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vuex/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/js/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 jiajia<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

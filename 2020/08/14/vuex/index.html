@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>nuannuanblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vuex状态管理模式，它采用集中式存储管理所有组件的公共状态， 第一个概念:State 可以看作是所有组件的data，存储所有组件的公共数据 第二个概念:Getters 可以理解为store的计算属性， Mutations  可以理解为store 的methods,mutations对象中保存着更改数据的回调函数，该函数官方规定是type，第一个参数是state,第二个参数是payload,也就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuannuanblog">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/vuex/index.html">
+<meta property="og:site_name" content="nuannuanblog">
+<meta property="og:description" content="vuex状态管理模式，它采用集中式存储管理所有组件的公共状态， 第一个概念:State 可以看作是所有组件的data，存储所有组件的公共数据 第二个概念:Getters 可以理解为store的计算属性， Mutations  可以理解为store 的methods,mutations对象中保存着更改数据的回调函数，该函数官方规定是type，第一个参数是state,第二个参数是payload,也就是">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-14T09:37:55.608Z">
+<meta property="article:modified_time" content="2020-08-18T02:16:16.267Z">
+<meta property="article:author" content="jiajia">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="nuannuanblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nuannuanblog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vuex" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/14/vuex/" class="article-date">
+  <time datetime="2020-08-14T09:37:55.608Z" itemprop="datePublished">2020-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><h3 id="状态管理模式，它采用集中式存储管理所有组件的公共状态，"><a href="#状态管理模式，它采用集中式存储管理所有组件的公共状态，" class="headerlink" title="状态管理模式，它采用集中式存储管理所有组件的公共状态，"></a>状态管理模式，它采用集中式存储管理所有组件的公共状态，</h3><ol>
+<li>第一个概念:State 可以看作是所有组件的data，存储所有组件的公共数据</li>
+<li>第二个概念:Getters 可以理解为store的计算属性，</li>
+<li>Mutations  可以理解为store 的methods,mutations对象中保存着更改数据的回调函数，该函数官方规定是type，第一个参数是state,第二个参数是payload,也就是自定义的参数</li>
+<li>Actions 类似于mutations 不同的是 actions 提交的是mutations而不是直接变更状态 actions包含异步操作，mutations 中绝不允许出现异步 actions 中的回调函数第一个参数是context 是一个与store 实例具有相同属性个方法的对象</li>
+<li>Modules  由于使用单一状态树,应用的所有的状态会集中到一个比较大的对象，当应用变得非常复杂时，store 对象就可能变得非常臃肿，为了解决这些问题，vuex允许我i们将store 分割成模块，每个模块拥有自己的state、mutation、action、getter甚至是嵌套子模块。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/14/vuex/" data-id="ckjutqwzt0004zsv50vyv79uf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/14/js/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/20/vue3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vue%E8%B7%AF%E7%94%B1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vuex/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/js/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 jiajia<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>nuannuanblog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据劫持就是使用[Get][Set]的特性，去访问对象属性和写入对象属性时能够触发属性特性的调用函数，从而做到监听数据变化的目的数据双向绑定的实现数据双向绑定主要是数据的变化引起视图的变化（Model-&gt;监听数据的变化-&gt;View）、视图的变化又改变数据(View-&gt;用户输入监听事件-&gt;Model)，从而实现数据和视图的强联系。对mvc mvp mvvm的理解 mvc模式就">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nuannuanblog">
+<meta property="og:url" content="http://yoursite.com/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="nuannuanblog">
+<meta property="og:description" content="数据劫持就是使用[Get][Set]的特性，去访问对象属性和写入对象属性时能够触发属性特性的调用函数，从而做到监听数据变化的目的数据双向绑定的实现数据双向绑定主要是数据的变化引起视图的变化（Model-&gt;监听数据的变化-&gt;View）、视图的变化又改变数据(View-&gt;用户输入监听事件-&gt;Model)，从而实现数据和视图的强联系。对mvc mvp mvvm的理解 mvc模式就">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="og:image" content="http://yoursite.com/images/">
+<meta property="article:published_time" content="2020-08-14T09:37:55.611Z">
+<meta property="article:modified_time" content="2020-08-20T06:40:16.711Z">
+<meta property="article:author" content="jiajia">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/images/">
+  
+    <link rel="alternate" href="/atom.xml" title="nuannuanblog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nuannuanblog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-vue基础知识" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time datetime="2020-08-14T09:37:55.611Z" itemprop="datePublished">2020-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数据劫持"><a href="#数据劫持" class="headerlink" title="数据劫持"></a>数据劫持</h3><h4 id="就是使用-Get-Set-的特性，去访问对象属性和写入对象属性时能够触发属性特性的调用函数，从而做到监听数据变化的目的"><a href="#就是使用-Get-Set-的特性，去访问对象属性和写入对象属性时能够触发属性特性的调用函数，从而做到监听数据变化的目的" class="headerlink" title="就是使用[Get][Set]的特性，去访问对象属性和写入对象属性时能够触发属性特性的调用函数，从而做到监听数据变化的目的"></a>就是使用[Get][Set]的特性，去访问对象属性和写入对象属性时能够触发属性特性的调用函数，从而做到监听数据变化的目的</h4><h3 id="数据双向绑定的实现"><a href="#数据双向绑定的实现" class="headerlink" title="数据双向绑定的实现"></a>数据双向绑定的实现</h3><h4 id="数据双向绑定主要是数据的变化引起视图的变化（Model-gt-监听数据的变化-gt-View）、视图的变化又改变数据-View-gt-用户输入监听事件-gt-Model-，从而实现数据和视图的强联系。"><a href="#数据双向绑定主要是数据的变化引起视图的变化（Model-gt-监听数据的变化-gt-View）、视图的变化又改变数据-View-gt-用户输入监听事件-gt-Model-，从而实现数据和视图的强联系。" class="headerlink" title="数据双向绑定主要是数据的变化引起视图的变化（Model-&gt;监听数据的变化-&gt;View）、视图的变化又改变数据(View-&gt;用户输入监听事件-&gt;Model)，从而实现数据和视图的强联系。"></a>数据双向绑定主要是数据的变化引起视图的变化（Model-&gt;监听数据的变化-&gt;View）、视图的变化又改变数据(View-&gt;用户输入监听事件-&gt;Model)，从而实现数据和视图的强联系。</h4><h3 id="对mvc-mvp-mvvm的理解"><a href="#对mvc-mvp-mvvm的理解" class="headerlink" title="对mvc mvp mvvm的理解"></a>对mvc mvp mvvm的理解</h3><ol>
+<li>mvc模式就是model view controller<br><img src="/images/"></li>
+</ol>
+<ul>
+<li>view传送指令给controller</li>
+<li>controller 完成业务逻辑后要求Model 改变状态</li>
+<li>Model将新的数据发送给view 用户得到反馈</li>
+</ul>
+<ol start="2">
+<li>mvp p指的是presenter<br><img src="/images/"></li>
+</ol>
+<ul>
+<li>各部分之间的通信都是双向的（顺时针）</li>
+<li>view 和 model 不发生联系都是通过presenter传递</li>
+<li>view 非常薄 不部署任何业务逻辑，被称为被动视图，既没有主动性，而且presenter 非常厚，所有的逻辑部署都在那里</li>
+</ul>
+<ol start="3">
+<li>mvvm 模式是吧presenter改名成了ViewModel 基本上和MVP模式一致唯一的区别就是这是双向绑定模式，View的变动，自动反应在viewModel,<br><img src="/images/"></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" data-id="ckjutqwzv0005zsv5fta8ct9q" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/14/vue%E8%B7%AF%E7%94%B1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/14/vuex/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/08/20/vue3/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vue%E8%B7%AF%E7%94%B1/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vue%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/vuex/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/14/js/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 jiajia<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
